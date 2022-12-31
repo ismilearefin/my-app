@@ -7,6 +7,9 @@ function App() {
       <h1>
         Hello Sobai
       </h1>
+      <p>
+        lorem Lorem Lorem
+      </p>
     </div>
   );
 }
