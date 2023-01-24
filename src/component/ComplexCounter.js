@@ -1,12 +1,14 @@
 import React, { useReducer } from "react";
 
-const initialState = 0;
+const initialState = {
+    counter : 0
+};
 const reducer = (state, action) => {
-  switch (action) {
+  switch (action.type) {
     case "increment":
-      return state + 1;
+      return {counter : state.counter + 1};
     case "decrement":
-      return state - 1;
+      return {counter : state.counter - 1};
     default:
       return state;
   }
@@ -19,11 +21,15 @@ const ComplexCounter = () => {
     <div>
       <h1>Complex Counter</h1>
       <div>
-        <div>Count = {count} </div>
-        <button type="button" onClick={() => dispatch("increment")}>
+        <div>Count = {count.counter} </div>
+        <button type="button" onClick={() => dispatch({
+            type : "increment",
+        })}>
           Increment
         </button>
-        <button type="button" onClick={() => dispatch("decrement")}>
+        <button type="button" onClick={() => dispatch({
+            type : "decrement",
+        })}>
           Decrement
         </button>
       </div>
